@@ -66,9 +66,11 @@ class RoundedEventTile extends StatelessWidget {
         color: backgroundColor,
         borderRadius: borderRadius,
       ),
+      alignment: Alignment.center,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           if (title.isNotEmpty)
             Expanded(
