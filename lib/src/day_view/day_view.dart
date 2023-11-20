@@ -618,7 +618,7 @@ class DayViewState<T extends Object?> extends State<DayView<T>> {
         title: events[0].title,
         totalEvents: events.length - 1,
         description: events[0].description,
-        padding: EdgeInsets.symmetric(horizontal: 2,vertical: 3),
+        padding: events[0].padding,
         backgroundColor: events[0].color,
         titleStyle: events[0].titleStyle,
         descriptionStyle: events[0].descriptionStyle,

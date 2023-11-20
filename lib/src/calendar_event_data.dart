@@ -22,6 +22,8 @@ class CalendarEventData<T extends Object?> {
   /// This is required when you are using [CalendarEventData] for [DayView]
   final DateTime? endTime;
 
+  final EdgeInsets padding;
+
   /// Title of the event.
   final String title;
 
@@ -52,6 +54,7 @@ class CalendarEventData<T extends Object?> {
     this.startTime,
     this.endTime,
     this.titleStyle,
+    this.padding = EdgeInsets.zero,
     this.descriptionStyle,
     DateTime? endDate,
     required this.date,
@@ -59,7 +62,8 @@ class CalendarEventData<T extends Object?> {
 
   DateTime get endDate => _endDate ?? date;
 
-  Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() =>
+      {
         "date": date,
         "startTime": startTime,
         "endTime": endTime,
@@ -67,6 +71,7 @@ class CalendarEventData<T extends Object?> {
         "title": title,
         "description": description,
         "endDate": endDate,
+        "padding": padding,
       };
 
   @override
@@ -91,7 +96,8 @@ class CalendarEventData<T extends Object?> {
         color == other.color &&
         titleStyle == other.titleStyle &&
         descriptionStyle == other.descriptionStyle &&
-        description == other.description;
+        description == other.description &&
+        padding == other.padding;
   }
 
   @override
